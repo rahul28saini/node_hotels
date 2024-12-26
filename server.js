@@ -34,11 +34,12 @@ console.log(filter)
 const express = require('express')
 const app = express();
 const db = require('./db.js');
+require('dotenv').config();
+
+const PORT = process.env.PORT || 3000;    //calling port from .env file
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-
-
 
 app.get('/', function (req, res) {
   res.send('Welcome to my hotel!!!... How can i help you?')
